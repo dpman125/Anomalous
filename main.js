@@ -18,25 +18,27 @@ function handleCommand(input) {
 
     switch (command) {
         case 'help':
-            console.log('Available commands: help, hello, quit, exit, status, version');
+            document.getElementById('dialog').textContent = ('Available commands: help, hello, quit, status, version');
             break;
         case 'hello':
-        case 'hi':
-        case 'hey':
-            document.getElementById('dialog').textContent = 'Hello, User! How can I assist you today?';
+            document.getElementById('dialog').textContent = ('Hello, User! How can I assist you today?');
             break;
         case 'quit':
-        case 'exit':
-        case 'bye':
-            console.log('Goodbye!');
+            document.getElementById('dialog').textContent = ('Goodbye!');
             rl.close();
             process.exit(0);
             break;
         case 'status':
-            console.log('System is running normally.');
+            document.getElementById('dialog').textContent = ('System is running normally.');
             break;
         case 'version':
-            console.log('Version 1.0.0');
+            document.getElementById('dialog').textContent = ('Version 1.0.0');
+            break;
+        case 'upupdowndownleftrightabstart':
+            document.getElementById('dialog').textContent = ("You think you're smart, don't you?");
+            break;
+        case '67':
+            document.getElementById('dialog').textContent = ('...');
             break;
         case '':
             // Do nothing for empty input
