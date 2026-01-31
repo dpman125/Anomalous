@@ -49,23 +49,23 @@ function handleCommand(input) {
         case 'hawaii':
             document.getElementById('dialog').textContent = ("Hawaii is a very real place, dumbass. Shouldn't you be working?");
             break;
-        case 'pneumonoultramicroscopicsilicovolcanoconiosis':
-            document.getElementById('dialog').textContent = ('How... the hell... did you SPELL that?! CORRECTLY?!');
-            break;
         case 'nantendo':
             document.getElementById('dialog').textContent = ("Genesis does what Nintendon't");
             break;
         case 'podcast':
             document.getElementById('dialog').textContent = ("Stop n' crash and screech n' halt");
             break;
-        case 'fuck':
-            document.getElementById('dialog').textContent = ("It costs NOTHING to be nice.");
-            break;
         case 'bitcoin':
             document.getElementById('dialog').textContent = ('Why the hell did you forget that password?! We could be billionares right now!');
             break;
         case 'developers':
             document.getElementById('dialog').textContent = ("Okay! So what is the $64,00 quEUstion? Holy cow I've just got to tough it up now, here we go. What's the $64,000 question for the field? What is the most asked question that I've recieved this week? What the HELL are we supposed to do about .NET Steve? It's a very good question, and it's got a veeeEEeeery very clear answer. Developers. The key to .NET, the key to industry transformation, the keEEeeey to success is: developers. Developers! Developers! Developers! Developers! Developers! Developers! Developers! Developers! Developers! DevAlopers! DevAlopers! DevAlopers! DevAlopers! ...YES!");
+            break;
+        case 'fuck':
+            document.getElementById('dialog').textContent = ("It costs NOTHING to be nice.");
+            break;
+        case 'pneumonoultramicroscopicsilicovolcanoconiosis':
+            document.getElementById('dialog').textContent = ('How... the hell... did you SPELL that?! CORRECTLY?!');
             break;
         case 'begin':
             document.getElementById('dialog').textContent = ('Are you ready to begin?');
