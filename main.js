@@ -44,7 +44,7 @@ function handleCommand(input) {
             // Do nothing for empty input
             break;
         default:
-            console.log(`Unknown command: "${input}". Type "help" for available commands.`);
+            document.getElementById('dialog').textContent = (`Unknown command: "${input}". Type "help" for available commands.`);
     }
 }
 
