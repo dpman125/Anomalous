@@ -18,7 +18,7 @@ function handleCommand(input) {
 
     switch (command) {
         case 'help':
-            document.getElementById('dialog').textContent = ('Available commands: help, hello, quit, status, version, secret');
+            document.getElementById('dialog').textContent = ('Available commands: help, hello, quit, begin, status, version, secret');
             break;
         case 'hello':
             document.getElementById('dialog').textContent = ('Hello, User! How can I assist you today?');
