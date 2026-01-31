@@ -18,7 +18,7 @@ function handleCommand(input) {
 
     switch (command) {
         case 'help':
-            console.log('Available commands: help, hello, quit, exit, status, version');
+            document.getElementById('dialog').textContent = 'Available commands: help, hello, quit, status, version';
             break;
         case 'hello':
         case 'hi':
@@ -28,22 +28,23 @@ function handleCommand(input) {
         case 'quit':
         case 'exit':
         case 'bye':
-            console.log('Goodbye!');
-            rl.close();
-            process.exit(0);
+            document.getElementById('dialog').textContent = 'Goodbye!';
             break;
         case 'status':
-            console.log('System is running normally.');
+            document.getElementById('dialog').textContent = 'System Stats: (TBD)';
             break;
         case 'version':
-            console.log('Version 1.0.0');
+            document.getElementById('dialog').textContent = 'Version 1.0.0';
             break;
         case '':
             // Do nothing for empty input
             break;
         default:
-            console.log(`Unknown command: "${input}". Type "help" for available commands.`);
+            document.getElementById('dialog').textContent = `Unknown command: "${input}". Type "help" for available commands.`;
     }
+    // generate a new command-line and command input prompt to run a second command
+    document.getElementById('command-line')
+    document.getElementById('commandinput').style.display = 'none';
 }
 
 
