@@ -40,6 +40,12 @@ function handleCommand(input) {
         case '67':
             document.getElementById('dialog').textContent = ('...');
             break;
+        case 'aaaaaaa':
+            document.getElementById('dialog').textContent = ("Screaming won't help you, you know");
+            break;
+        case 'begin':
+            document.getElementById('dialog').textContent = ('Are you ready to begin?');
+            break;
         case '':
             // Do nothing for empty input
             break;
