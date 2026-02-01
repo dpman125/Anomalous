@@ -1,4 +1,5 @@
 // variables
+python -m http.server 8000
 characterIndex = -1;
 siteIndex = -1;
 
