@@ -20,7 +20,7 @@ img {
 body {
     background-color: #0a0a0a;
     font-family: 'VT323', 'Courier New', Courier, monospace;
-    color: #FFFFFF;
+    color: #33ff33;
     padding: 20px;
     font-size: 18px;
     text-shadow: 0 0 5px #33ff33;
@@ -59,7 +59,7 @@ body::after {
 h1 {
     font-size: 48px;
     text-align: left;
-    color: #FFFFFF;
+    color: #33ff33;
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 8px;
@@ -67,7 +67,7 @@ h1 {
 }
 
 p {
-    color: #FFFFFF;
+    color: #33ff33;
     margin-bottom: 15px;
     font-size: 18px;
 }
@@ -85,6 +85,11 @@ p strong {
 .red {
     color: #ff3333;
     text-shadow: 0 0 10px #ff3333;
+}
+
+.white {
+    color: #FFFFFF;
+    text-shadow: 0 0 10px #35a6a6;
 }
 
 a {
