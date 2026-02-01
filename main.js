@@ -10,9 +10,20 @@ document.addEventListener('keydown', function (event) {
         window.location.href = 'new_page.html';
     }
 
-    console.log('Key pressed:', event.key);
 });
 
+function chatBtnUpdate() {
+    const character = characterList[characterIndex];
+    if (bossMilestone !== -1 && character && character !== LeroyJenkins) {
+        console.log(characterIndex);
+        console.log(character);
+        document.getElementById("chatBtn").style.display = "flex";
+        document.getElementById("chatBtn").innerHTML = "Chat with " + character.dept + " Lead";
+    } else {
+        console.log("Hiding chat button");
+        document.getElementById("chatBtn").style.display = "none";
+    }
+}
 
 
 //----------profile toggle functions-------------
@@ -41,15 +52,16 @@ function previousProfile() {
 function updateProfileDisplay() {
     const character = characterList[characterIndex];
     if (!character) {
-        document.getElementById("profile_name").innerText = "No account Selected";
-        document.getElementById("profile_age").innerText = "";
-        document.getElementById("profile_bio").innerText = "Please select an account or sign in";
-        document.getElementById("profile_img").src = "img/waltah.jpg";
+        document.getElementById("profile_name").innerHTML = "No account Selected";
+        document.getElementById("profile_age").innerHTML = "";
+        document.getElementById("profile_bio").innerHTML = "Please select an account or sign in";
+        document.getElementById("profile_img").src = "img/defaultavatar.png";
         return;
     }
-    document.getElementById("profile_name").innerText = character.name;
-    document.getElementById("profile_age").innerText = character.age;
-    document.getElementById("profile_bio").innerText = character.bio;
+    chatBtnUpdate();
+    document.getElementById("profile_name").innerHTML = character.name;
+    document.getElementById("profile_age").innerHTML = character.age;
+    document.getElementById("profile_bio").innerHTML = character.bio;
     document.getElementById("profile_img").src = character.img;
 }
 
@@ -63,6 +75,7 @@ function nextSite() {
     }
 
     updateSiteDisplay();
+    chatBtnUpdate();
 }
 
 function previousSite() {
@@ -74,6 +87,7 @@ function previousSite() {
     }
 
     updateSiteDisplay();
+    chatBtnUpdate();
 }
 
 function updateSiteDisplay() {
@@ -111,29 +125,35 @@ function handleSubmit(event) {
         nextSite();
         closeModal('profileModal');
         updateProfileDisplay();
+        chatBtnUpdate();
         return;
     }
 
     // Normal login check
     for (const character of sideCharacterList) {
-        if (character.username === username && character.password === password) {
-            alert("Login successful!");
-            if (bossMilestone == -1) {
-                bossMilestone = 0;
-                nextSite();
+        if (character.username === username) {
+
+            if (character.password === password) {
+                alert("Login successful!");
+                if (bossMilestone == -1) {
+                    bossMilestone = 0;
+                    nextSite();
+                }
+                if (!characterList.includes(character)) {
+                    characterList.push(character);
+                }
+                closeModal('profileModal');
+                characterIndex = characterList.indexOf(character);
+                updateProfileDisplay();
+                chatBtnUpdate();
+                return;
             }
-            if (!characterList.includes(character)) {
-                characterList.push(character);
-            }
-            closeModal('profileModal');
-            characterIndex = characterList.indexOf(character);
-            updateProfileDisplay();
-            return;
+            alert("Incorrect password for username: " + username + ". \n HINT: " + character.hint);
         }
     }
 
     // Only show if no match found
-    alert("Invalid username or password.\n \n Hint: Not very secure password");
+    alert("username not found");
 }
 
 document.getElementById("team_img1").src = sideCharacterList[0].img;
@@ -155,59 +175,59 @@ document.getElementById("team_img16").src = sideCharacterList[15].img;
 document.getElementById("team_img17").src = sideCharacterList[16].img;
 document.getElementById("team_img18").src = sideCharacterList[17].img;
 
-document.getElementById("team_name1").innerText = sideCharacterList[0].name;
-document.getElementById("team_name2").innerText = sideCharacterList[1].name;
-document.getElementById("team_name3").innerText = sideCharacterList[2].name;
-document.getElementById("team_name4").innerText = sideCharacterList[3].name;
-document.getElementById("team_name5").innerText = sideCharacterList[4].name;
-document.getElementById("team_name6").innerText = sideCharacterList[5].name;
-document.getElementById("team_name7").innerText = sideCharacterList[6].name;
-document.getElementById("team_name8").innerText = sideCharacterList[7].name;
-document.getElementById("team_name9").innerText = sideCharacterList[8].name;
-document.getElementById("team_name10").innerText = sideCharacterList[9].name;
-document.getElementById("team_name11").innerText = sideCharacterList[10].name;
-document.getElementById("team_name12").innerText = sideCharacterList[11].name;
-document.getElementById("team_name13").innerText = sideCharacterList[12].name;
-document.getElementById("team_name14").innerText = sideCharacterList[13].name;
-document.getElementById("team_name15").innerText = sideCharacterList[14].name;
-document.getElementById("team_name16").innerText = sideCharacterList[15].name;
-document.getElementById("team_name17").innerText = sideCharacterList[16].name;
-document.getElementById("team_name18").innerText = sideCharacterList[17].name;
+document.getElementById("team_name1").innerHTML = sideCharacterList[0].name;
+document.getElementById("team_name2").innerHTML = sideCharacterList[1].name;
+document.getElementById("team_name3").innerHTML = sideCharacterList[2].name;
+document.getElementById("team_name4").innerHTML = sideCharacterList[3].name;
+document.getElementById("team_name5").innerHTML = sideCharacterList[4].name;
+document.getElementById("team_name6").innerHTML = sideCharacterList[5].name;
+document.getElementById("team_name7").innerHTML = sideCharacterList[6].name;
+document.getElementById("team_name8").innerHTML = sideCharacterList[7].name;
+document.getElementById("team_name9").innerHTML = sideCharacterList[8].name;
+document.getElementById("team_name10").innerHTML = sideCharacterList[9].name;
+document.getElementById("team_name11").innerHTML = sideCharacterList[10].name;
+document.getElementById("team_name12").innerHTML = sideCharacterList[11].name;
+document.getElementById("team_name13").innerHTML = sideCharacterList[12].name;
+document.getElementById("team_name14").innerHTML = sideCharacterList[13].name;
+document.getElementById("team_name15").innerHTML = sideCharacterList[14].name;
+document.getElementById("team_name16").innerHTML = sideCharacterList[15].name;
+document.getElementById("team_name17").innerHTML = sideCharacterList[16].name;
+document.getElementById("team_name18").innerHTML = sideCharacterList[17].name;
 
-document.getElementById("team_age1").innerText = sideCharacterList[0].age;
-document.getElementById("team_age2").innerText = sideCharacterList[1].age;
-document.getElementById("team_age3").innerText = sideCharacterList[2].age;
-document.getElementById("team_age4").innerText = sideCharacterList[3].age;
-document.getElementById("team_age5").innerText = sideCharacterList[4].age;
-document.getElementById("team_age6").innerText = sideCharacterList[5].age;
-document.getElementById("team_age7").innerText = sideCharacterList[6].age;
-document.getElementById("team_age8").innerText = sideCharacterList[7].age;
-document.getElementById("team_age9").innerText = sideCharacterList[8].age;
-document.getElementById("team_age10").innerText = sideCharacterList[9].age;
-document.getElementById("team_age11").innerText = sideCharacterList[10].age;
-document.getElementById("team_age12").innerText = sideCharacterList[11].age;
-document.getElementById("team_age13").innerText = sideCharacterList[12].age;
-document.getElementById("team_age14").innerText = sideCharacterList[13].age;
-document.getElementById("team_age15").innerText = sideCharacterList[14].age;
-document.getElementById("team_age16").innerText = sideCharacterList[15].age;
-document.getElementById("team_age17").innerText = sideCharacterList[16].age;
-document.getElementById("team_age18").innerText = sideCharacterList[17].age;
+document.getElementById("team_age1").innerHTML = sideCharacterList[0].age;
+document.getElementById("team_age2").innerHTML = sideCharacterList[1].age;
+document.getElementById("team_age3").innerHTML = sideCharacterList[2].age;
+document.getElementById("team_age4").innerHTML = sideCharacterList[3].age;
+document.getElementById("team_age5").innerHTML = sideCharacterList[4].age;
+document.getElementById("team_age6").innerHTML = sideCharacterList[5].age;
+document.getElementById("team_age7").innerHTML = sideCharacterList[6].age;
+document.getElementById("team_age8").innerHTML = sideCharacterList[7].age;
+document.getElementById("team_age9").innerHTML = sideCharacterList[8].age;
+document.getElementById("team_age10").innerHTML = sideCharacterList[9].age;
+document.getElementById("team_age11").innerHTML = sideCharacterList[10].age;
+document.getElementById("team_age12").innerHTML = sideCharacterList[11].age;
+document.getElementById("team_age13").innerHTML = sideCharacterList[12].age;
+document.getElementById("team_age14").innerHTML = sideCharacterList[13].age;
+document.getElementById("team_age15").innerHTML = sideCharacterList[14].age;
+document.getElementById("team_age16").innerHTML = sideCharacterList[15].age;
+document.getElementById("team_age17").innerHTML = sideCharacterList[16].age;
+document.getElementById("team_age18").innerHTML = sideCharacterList[17].age;
 
-document.getElementById("team_bio1").innerText = sideCharacterList[0].bio;
-document.getElementById("team_bio2").innerText = sideCharacterList[1].bio;
-document.getElementById("team_bio3").innerText = sideCharacterList[2].bio;
-document.getElementById("team_bio4").innerText = sideCharacterList[3].bio;
-document.getElementById("team_bio5").innerText = sideCharacterList[4].bio;
-document.getElementById("team_bio6").innerText = sideCharacterList[5].bio;
-document.getElementById("team_bio7").innerText = sideCharacterList[6].bio;
-document.getElementById("team_bio8").innerText = sideCharacterList[7].bio;
-document.getElementById("team_bio9").innerText = sideCharacterList[8].bio;
-document.getElementById("team_bio10").innerText = sideCharacterList[9].bio;
-document.getElementById("team_bio11").innerText = sideCharacterList[10].bio;
-document.getElementById("team_bio12").innerText = sideCharacterList[11].bio;
-document.getElementById("team_bio13").innerText = sideCharacterList[12].bio;
-document.getElementById("team_bio14").innerText = sideCharacterList[13].bio;
-document.getElementById("team_bio15").innerText = sideCharacterList[14].bio;
-document.getElementById("team_bio16").innerText = sideCharacterList[15].bio;
-document.getElementById("team_bio17").innerText = sideCharacterList[16].bio;
-document.getElementById("team_bio18").innerText = sideCharacterList[17].bio;
+document.getElementById("team_bio1").innerHTML = sideCharacterList[0].bio;
+document.getElementById("team_bio2").innerHTML = sideCharacterList[1].bio;
+document.getElementById("team_bio3").innerHTML = sideCharacterList[2].bio;
+document.getElementById("team_bio4").innerHTML = sideCharacterList[3].bio;
+document.getElementById("team_bio5").innerHTML = sideCharacterList[4].bio;
+document.getElementById("team_bio6").innerHTML = sideCharacterList[5].bio;
+document.getElementById("team_bio7").innerHTML = sideCharacterList[6].bio;
+document.getElementById("team_bio8").innerHTML = sideCharacterList[7].bio;
+document.getElementById("team_bio9").innerHTML = sideCharacterList[8].bio;
+document.getElementById("team_bio10").innerHTML = sideCharacterList[9].bio;
+document.getElementById("team_bio11").innerHTML = sideCharacterList[10].bio;
+document.getElementById("team_bio12").innerHTML = sideCharacterList[11].bio;
+document.getElementById("team_bio13").innerHTML = sideCharacterList[12].bio;
+document.getElementById("team_bio14").innerHTML = sideCharacterList[13].bio;
+document.getElementById("team_bio15").innerHTML = sideCharacterList[14].bio;
+document.getElementById("team_bio16").innerHTML = sideCharacterList[15].bio;
+document.getElementById("team_bio17").innerHTML = sideCharacterList[16].bio;
+document.getElementById("team_bio18").innerHTML = sideCharacterList[17].bio;

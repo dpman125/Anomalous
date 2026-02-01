@@ -2,25 +2,27 @@ const MasonClay = new Object({
     name: "Mason G. Clay",
     age: 26,
     bio: "Cybersecurity specialist",
-    img: "img/MasonClay.jpg",
+    img: "img/randd/mason.png",
     username: "MasonGClay",
-    password: "password"
+    password: "password",
+    dept: "RandD",
+    hint: "there is no way you can forget this pwd"
 });
 
 const LitePlus = new Object({
     name: "Lite+",
     age: 5,
     bio: "A friendly lightweight AI assistant designed to help with everyday tasks.",
-    img: "img/unnamed.jpg",
+    img: "img/it/liteplus.png",
     username: "LitePlus",
-    password: "password"
+    password: "password",
 });
 
 const Hal_Emmerich = new Object({
     name: "Hal Emmerich",
     age: 38,
     bio: "IT support specialist",
-    img: "img/hal.jpg",
+    img: "img/files/hal.png",
     username: "HalEmmerich",
     password: "password"
 });
@@ -28,7 +30,7 @@ const Babel = new Object({
     name: "Babel",
     age: 3,
     bio: "All purpose agentic AI",
-    img: "img/babel.jpg",
+    img: "img/acns/babel.png",
     username: "Babel",
     password: "password"
 });
@@ -37,7 +39,7 @@ const GMcCarthy = new Object({
     name: "G. McCarthy",
     age: 45,
     bio: "Lead developer and AI ethicist",
-    img: "img/mccarthy.png",
+    img: "img/security/mccarthy.png",
     username: "GMcCarthy",
     password: "password"
 });
@@ -46,7 +48,7 @@ const ElliotBalmer = new Object({
     name: "Elliot Balmer",
     age: 30,
     bio: "CTO and founder of Babel",
-    img: "img/elliotbalmer.jpg",
+    img: "img/finance/elliot.png",
     username: "ElliotBalmer",
     password: "password"
 });
@@ -55,7 +57,7 @@ const JaceyCole = new Object({
     name: "Jacey 'J' Cole",
     age: 28,
     bio: "R&D engineer",
-    img: "img/jaceyjcole.jpg",
+    img: "img/randd/jaceyjcole.png",
     username: "JaceyJCole",
     password: "password"
 });
@@ -105,6 +107,7 @@ const CalebBaldwin = new Object({
     img: "img/files/caleb.png",
     username: "calwilbald",
     password: "moonlanding0",
+    encrypted_pw: "************",
     hint: "what the government faked in 1969 + the number of times I asked (all lowercase)",
     dept: "Files",
 });
@@ -116,6 +119,7 @@ const PaulTaylor = new Object({
     img: "img/files/paul.png",
     username: "genericusername69",
     password: "AceAndLuna",
+    encrypted_pw: "**********",
     hint: "the best puppers. boy \"and\" girl (case sensitive)",
     dept: "Files",
 });
@@ -127,6 +131,7 @@ const ChristianMatthew = new Object({
     img: "img/files/christian.png",
     username: "christianmatthew25",
     password: "skullsmashers420",
+    encrypted_pw: "****************",
     hint: "band name + favorite number (all lowercase)",
     dept: "IT",
 });
@@ -139,6 +144,7 @@ const DukeCollins = new Object({
     img: "img/acns/duke.png",
     username: "doglover55",
     password: "Tucker10",
+    encrypted_pw: "********",
     hint: "the best boy (case sensitive) + his age",
     dept: "ACNS",
 });
@@ -150,6 +156,7 @@ const GabeMartinez = new Object({
     img: "img/acns/gabe.png",
     username: "gabemartinez98",
     password: "comedian28",
+    encrypted_pw: "**********",
     hint: "my dream job + age",
     dept: "ACNS",
 });
@@ -161,6 +168,7 @@ const ErwinDAmico = new Object({
     img: "img/acns/erwin.png",
     username: "saxman97",
     password: "gabemartinez",
+    encrypted_pw: "************",
     hint: "Best friend at work (full name no spaces all lowercase)",
     dept: "ACNS",
 });
@@ -172,6 +180,7 @@ const IbrahimHashmi = new Object({
     img: "img/security/ibrahim.png",
     username: "ibrahimhashmi01",
     password: "friday5:00pm",
+    encrypted_pw: "************",
     hint: "favorite day of the week + favorite time of my favorite day of the week (remember to use an actual time format like \"0:00pm\") (all lowercase)",
     dept: "Security",
 });
@@ -180,11 +189,12 @@ const LeroyJenkins = new Object({
     name: "Leroy Jenkins",
     age: 80,
     bio: "<strong>Likes:</strong> world of warcraft, Fantasy, Dungeons and Dragons, his friends.<br><strong>Dislikes:</strong> waiting for something he could do himself, his friends being fired and replaced by artificial intelligence, his job<br><strong>Bio:</strong>  leroy was enamored by dungeons and dragons at a young age, and loved everything fantasy related, then he found world of warcraft and joined his friends guild but he needed to make money so he got a job at the local data center. (Could also entirely be a bot the company unknowingly hired, hard to tell).",
-    img: "img/security/leroy.png",
-    username: "realperson123",
-    password: "very secure",
+    img: "img/leroy.png",
+    username: "ljenkins12",
+    password: "password",
+    encrypted_pw: "********",
     hint: "my password is very secure",
-    dept: "Security",
+    dept: "other"
 });
 
 const MorganGray = new Object({
@@ -194,6 +204,7 @@ const MorganGray = new Object({
     img: "img/security/morgan.png",
     username: "leadfist99",
     password: "mmaswimming",
+    encrypted_pw: "***********",
     hint: "my old sport + my new sport :)",
     dept: "Security",
 });
@@ -205,6 +216,7 @@ const GeraldWalker = new Object({
     img: "img/finance/gerald.png",
     username: "geraldwalker",
     password: "susan18europe",
+    encrypted_pw: "*************",
     hint: "sexiest person alive + son's age + a cool continent(all lowercase)",
     dept: "Finance",
 });
@@ -216,6 +228,7 @@ const SusanWalker = new Object({
     img: "img/finance/susan.png",
     username: "susanwalker",
     password: "jamesandgerald",
+    encrypted_pw: "**************",
     hint: "the name of the best son + 'and' + the best husband :) (lowercase)",
     dept: "Finance",
 });
@@ -227,6 +240,7 @@ const DarrenHill = new Object({
     img: "img/finance/darren.png",
     username: "RichChristian53",
     password: "Nevada777",
+    encrypted_pw: "*********",
     hint: "the best state for my pastime + the lucky number",
     dept: "Finance",
 
@@ -239,6 +253,7 @@ const MattDavis = new Object({
     img: "img/randd/matt.png",
     username: "CodeMaster26",
     password: "sensorama",
+    encrypted_pw: "*********",
     hint: "the oldest pair of eyes that allowed us to view a new reality",
     dept: "RandD",
 
@@ -251,6 +266,7 @@ const Tonyward = new Object({
     img: "img/randd/tony.png",
     username: "wardtech11",
     password: "011100",
+    encrypted_pw: "******",
     hint: "my age in the language that transends humanity",
     dept: "RandD",
 });
@@ -266,13 +282,12 @@ const mcList = [
 ];
 
 const sideCharacterList = [
-    LeroyJenkins,
     RylandMeyer,
     MaxwellBlake,
     Erikkramer,
-    CalebBaldwin,
     PaulTaylor,
     ChristianMatthew,
+    CalebBaldwin,
     DukeCollins,
     GabeMartinez,
     ErwinDAmico,
@@ -284,6 +299,7 @@ const sideCharacterList = [
     MattDavis,
     MasonClay,
     Tonyward,
+    LeroyJenkins,
 ]
 
 characterList = [];
