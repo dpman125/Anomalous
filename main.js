@@ -5,8 +5,8 @@ siteIndex = -1;
 // game start
 document.addEventListener('keydown', function (event) {
     // Code to execute when a key is pressed down
-
-    if (event.key === 'Enter' && window.location.href.endsWith('index.html')) {
+    const path = window.location.pathname;
+    if (event.key === 'Enter' && (path.endsWith('index.html') || path === '/' || path.endsWith('/'))) {
         window.location.href = 'home.html';
     }
 

@@ -339,10 +339,113 @@ const acnsDialogueTree = {
         playerText: "Excuse me?",
         options: [{ text: "you call me a liar? Does that make you a hypocrite?", nextState: "accusation" }, { text: "what does that make you?", nextState: "questioning_end" }, { text: "I'm sorry, you must be mistaken.", nextState: "polite_end" }]
     },
-    "questioning_end": {},
+    "questioning_end": {
+        bossText: "The exception \nBLOCKED",
+        playerText: "what does that make you?",
+        options: [],
+        onEnter: function () {
+            setTimeout(function () { closeModal('chatModal'); }, 8000);
+        },
+    },
+    "polite_end": {
+        bossText: "must? \nBLOCKED",
+        playerText: "I'm sorry, you must be mistaken.",
+        options: [],
+        onEnter: function () {
+            setTimeout(function () { closeModal('chatModal'); }, 8000);
+        }
+    },
+    "accusation": {
+        bossText: "In the traditional sense. Acting is an art and tool like any other. Let me ask you, do you think I use delusion or appeasement to play my game?",
+        playerText: "You call me a liar? Does that make you a hypocrite?",
+        options: [{ text: "Appeasement", nextState: "appeasement_end" }, { text: "Delusion", nextState: "delusion_end" }, { text: "Both.", nextState: "both_success" }]
+    },
+    "appeasement_end": {
+        bossText: "\nBLOCKED",
+        playerText: "Appeasement",
+        options: [],
+        onEnter: function () {
+            setTimeout(function () { closeModal('chatModal'); }, 8000);
+        }
+    },
+    "delusion_end": {
+        bossText: "\nBLOCKED",
+        playerText: "Delusion",
+        options: [],
+        onEnter: function () {
+            setTimeout(function () { closeModal('chatModal'); }, 8000);
+        }
+    },
+    "both_success": {
+        bossText: "Very good. They are most effective in tandem. An example of such a trainwreck can be found in the Security Department. You ought to relate. I will be keeping a watchful eye on you. Move along now.\nPASSED",
+        playerText: "Both.",
+        options: [],
+        onEnter: function () {
+            // Unlock ACNS access here
+            if (bossMilestone < 3) bossMilestone = 3;
+            nextSite();
+            setTimeout(function () { closeModal('chatModal'); }, 8000);
+        }
+    },
+
     "denial": {
+        bossText: "The one you used to get in here. To move from department to department.",
+        playerText: "what mask",
+        options: [{ text: "How did you know that?", nextState: "admission_end" }, { text: "I don't know what you're talking about.", nextState: "denial_end" }, { text: "It was easy. Just needed to pay attention to the clues.", nextState: "clever" }]
+    },
+    "admission_end": {
+        bossText: "The same way I know everything, because I can and I do. \nBLOCKED",
+        playerText: "How did you know that?",
+        options: [],
+        onEnter: function () {
+            setTimeout(function () { closeModal('chatModal'); }, 8000);
+        }
+    },
+    "denial_end": {
+        bossText: "I'm not your man.\nBLOCKED",
+        playerText: "I don't know what you're talking about.",
+        options: [],
+        onEnter: function () {
+            setTimeout(function () { closeModal('chatModal'); }, 8000);
+        }
+    },
+    "clever": {
+        bossText: "But you haven't paid close enough attention. To know the full scope of the game.",
+        playerText: "It was easy. Just needed to pay attention to the clues.",
+        options: [{ text: "I wanna know", nextState: "apprentice_success" },
+        { text: "You don't know me.", nextState: "defensive_end" }, {
+            text: "what do you mean by the game?", nextState:
+                "foolish_end"
+        }]
 
     },
+    "defensive_end": {
+        bossText: "Keep telling yourself that. \nBLOCKED",
+        playerText: "You don't know me.",
+        options: [],
+        onEnter: function () {
+            setTimeout(function () { closeModal('chatModal'); }, 8000);
+        }
+    },
+    "foolish_end": {
+        bossText: "Oh dear, oh dear... if you want answers you've got to earn them. \nBLOCKED",
+        playerText: "what do you mean by the game?",
+        options: [],
+        onEnter: function () {
+            setTimeout(function () { closeModal('chatModal'); }, 8000);
+        }
+    },
+    "apprentice_success": {
+        bossText: " Is that so? You want to know the game? Go to Security, they too are rising against me, see what you can learn. I will be finding you again soon\nPASSED",
+        playerText: "I wanna know",
+        options: [],
+        onEnter: function () {
+            // Unlock ACNS access here
+            if (bossMilestone < 3) bossMilestone = 3;
+            nextSite();
+            setTimeout(function () { closeModal('chatModal'); }, 8000);
+        }
+    }
 };
 
 const securityDialogueTree = {
