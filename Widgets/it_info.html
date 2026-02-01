@@ -64,8 +64,11 @@
                 <td>
                     <h1 class="dcd_ifo" id="team_name1">
                     </h1>
+                    <h2 class="dcd_ifo" id="team_dept1"></h2>
+                    <p class="dcd_ifo" id="team_user1" style="font-size:35px"></p>
+                    <p class="dcd_ifo" id="team_pass1" style="font-size:35px"></p>
                     <strong>
-                        <p class="dcd_ifo" id="team_age1" style="font-size:30px"></p>
+                        <p class="dcd_ifo" id="team_age1" style="font-size:35px"></p>
                     </strong>
                     <p class="dcd_ifo bio" id="team_bio1"></p>
                 </td>
@@ -77,8 +80,11 @@
                 <td>
                     <h1 class="dcd_ifo" id="team_name2">
                     </h1>
+                    <h2 class="dcd_ifo" id="team_dept2"></h2>
+                    <p class="dcd_ifo" id="team_user2" style="font-size:35px"></p>
+                    <p class="dcd_ifo" id="team_pass2" style="font-size:35px"></p>
                     <strong>
-                        <p class="dcd_ifo" id="team_age2" style="font-size:30px"></p>
+                        <p class="dcd_ifo" id="team_age2" style="font-size:35px"></p>
                     </strong>
                     <p class="dcd_ifo bio" id="team_bio2"></p>
                 </td>
@@ -90,8 +96,11 @@
                 <td>
                     <h1 class="dcd_ifo" id="team_name3">
                     </h1>
+                    <h2 class="dcd_ifo" id="team_dept3"></h2>
+                    <p class="dcd_ifo" id="team_user3" style="font-size:35px"></p>
+                    <p class="dcd_ifo" id="team_pass3" style="font-size:35px"></p>
                     <strong>
-                        <p class="dcd_ifo" id="team_age3" style="font-size:30px"></p>
+                        <p class="dcd_ifo" id="team_age3" style="font-size:35px"></p>
                     </strong>
                     <p class="dcd_ifo bio" id="team_bio3"></p>
                 </td>
@@ -114,13 +123,25 @@
         document.getElementById("team_img2").src = "../" + sideCharacterList[1].img;
         document.getElementById("team_img3").src = "../" + sideCharacterList[2].img;
 
-        document.getElementById("team_name1").innerText = sideCharacterList[0].name;
-        document.getElementById("team_name2").innerText = sideCharacterList[1].name;
-        document.getElementById("team_name3").innerText = sideCharacterList[2].name;
+        document.getElementById("team_name1").innerHTML = sideCharacterList[0].name;
+        document.getElementById("team_name2").innerHTML = sideCharacterList[1].name;
+        document.getElementById("team_name3").innerHTML = sideCharacterList[2].name;
 
-        document.getElementById("team_age1").innerText = "Age: " + sideCharacterList[0].age;
-        document.getElementById("team_age2").innerText = "Age: " + sideCharacterList[1].age;
-        document.getElementById("team_age3").innerText = "Age: " + sideCharacterList[2].age;
+        document.getElementById("team_dept1").innerHTML = "Department: " + sideCharacterList[0].dept;
+        document.getElementById("team_dept2").innerHTML = "Department: " + sideCharacterList[1].dept;
+        document.getElementById("team_dept3").innerHTML = "Department: " + sideCharacterList[2].dept;
+
+        document.getElementById("team_user1").innerHTML = "Username: " + sideCharacterList[0].username;
+        document.getElementById("team_user2").innerHTML = "Username: " + sideCharacterList[1].username;
+        document.getElementById("team_user3").innerHTML = "Username: " + sideCharacterList[2].username;
+
+        document.getElementById("team_pass1").innerHTML = "Password: " + sideCharacterList[0].encrypted_pw;
+        document.getElementById("team_pass2").innerHTML = "Password: " + sideCharacterList[1].encrypted_pw;
+        document.getElementById("team_pass3").innerHTML = "Password: " + sideCharacterList[2].encrypted_pw;
+
+        document.getElementById("team_age1").innerHTML = "Age: " + sideCharacterList[0].age;
+        document.getElementById("team_age2").innerHTML = "Age: " + sideCharacterList[1].age;
+        document.getElementById("team_age3").innerHTML = "Age: " + sideCharacterList[2].age;
 
         document.getElementById("team_bio1").innerHTML = sideCharacterList[0].bio;
         document.getElementById("team_bio2").innerHTML = sideCharacterList[1].bio;

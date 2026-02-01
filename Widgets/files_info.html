@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Files Info</title>
@@ -14,6 +15,7 @@
         }
     </style>
 </head>
+
 <body style="background-color:aliceblue">
     <div class="webpagediv">
         <h1 class="dcd_ifo"> C-DC Files
@@ -51,6 +53,7 @@
         <p class="dcd_ifo"> @HalEmerich: uhh, a little :) </p>
         <p class="dcd_ifo"> -------------------------------------------------------------------------------------------------------------------------------------------------- </p>
         <h2 class="dcd_ifo"> Logged Reports </h2>
+<<<<<<< HEAD
         <h3 class="dcd_ifo"> Log #56 - (October 18th, 2025 / 15:48) </h3>
         <p class="dcd_ifo"> @CalebBaldwin: This is ass. </p>
         <p class="dcd_ifo"> @HalEmerich: You will have to be more specific… </p>
@@ -66,6 +69,31 @@
         <p class="dcd_ifo"> @HalEmerich: Make sure to burn your ID card! Can’t be too careful, you never know who's trying to get in. </p>
         <p class="dcd_ifo"> -------------------------------------------------------------------------------------------------------------------------------------------------- </p>
 
+=======
+        <p class="dcd_ifo"> njgjgoij5oigj54oigj5 </p>
+        <h2 class="dcd_ifo"> Hal and the Employee Programmer</h2>
+        <p class="dcd_ifo"> f4jngij4pigjp34 </p>
+
+        <table>
+            <tr>
+                <th class="dcd_ifo" colspan="2">
+                    <h1 class="dcd_ifo">Leadership</h1>
+                </th>
+            </tr>
+            <tr>
+                <td><img src="../img/files/hal.png" alt="Hal" style="width:200px;"></td>
+                <td class="dcd_ifo">
+                    Greetings and welcome. I'm Lite+, The personal assistant to help guide you through your experience
+                    here at
+                    Agora. While people really like my big brother BABEL, I hold a very important role. Keeping things
+                    balanced.
+                    While we are this close to actualizing infinity, the world wants to pace itself. That's where I come
+                    in! I'm all
+                    about transparency and user safety, the keys to the online of tomorrow.
+                </td>
+            </tr>
+        </table>
+>>>>>>> 6c6a23c574e2c9d65e47ff606f8f2e225f610768
 
         <h2 class="dcd_ifo"> Our Team</h2>
         <table>
@@ -77,6 +105,12 @@
                     <h3 class="dcd_ifo" id="team_name4">
                     </h3>
                     <p class="dcd_ifo" id="team_age4"></p>
+                    <h1 class="dcd_ifo" id="team_name4">
+                    </h1>
+                    <h2 class="dcd_ifo" id="team_dept4"></h2>
+                    <p class="dcd_ifo" id="team_user4" style="font-size:35px"></p>
+                    <p class="dcd_ifo" id="team_pass4" style="font-size:35px"></p>
+                    <p class="dcd_ifo" id="team_age4" style="font-size:35px"></p>
                     <p class="dcd_ifo bio" id="team_bio4"></p>
                 </td>
             </tr>
@@ -88,6 +122,12 @@
                     <h3 class="dcd_ifo" id="team_name5">
                     </h3>
                     <p class="dcd_ifo" id="team_age5"></p>
+                    <h1 class="dcd_ifo" id="team_name5">
+                    </h1>
+                    <h2 class="dcd_ifo" id="team_dept5"></h2>
+                    <p class="dcd_ifo" id="team_user5" style="font-size:35px"></p>
+                    <p class="dcd_ifo" id="team_pass5" style="font-size:35px"></p>
+                    <p class="dcd_ifo" id="team_age5" style="font-size:35px"></p>
                     <p class="dcd_ifo bio" id="team_bio5"></p>
                 </td>
             </tr>
@@ -96,9 +136,12 @@
                     <img id="team_img6">
                 </td>
                 <td>
-                    <h3 class="dcd_ifo" id="team_name6">
-                    </h3>
-                    <p class="dcd_ifo" id="team_age6"></p>
+                    <h1 class="dcd_ifo" id="team_name6">
+                    </h1>
+                    <h2 class="dcd_ifo" id="team_dept6"></h2>
+                    <p class="dcd_ifo" id="team_user6" style="font-size:35px"></p>
+                    <p class="dcd_ifo" id="team_pass6" style="font-size:35px"></p>
+                    <p class="dcd_ifo" id="team_age6" style="font-size:35px"></p>
                     <p class="dcd_ifo bio" id="team_bio6"></p>
                 </td>
             </tr>
@@ -109,17 +152,30 @@
         document.getElementById("team_img5").src = "../" + sideCharacterList[4].img;
         document.getElementById("team_img6").src = "../" + sideCharacterList[5].img;
 
-        document.getElementById("team_name4").innerText = sideCharacterList[3].name;
-        document.getElementById("team_name5").innerText = sideCharacterList[4].name;
-        document.getElementById("team_name6").innerText = sideCharacterList[5].name;
+        document.getElementById("team_name4").innerHTML = sideCharacterList[3].name;
+        document.getElementById("team_name5").innerHTML = sideCharacterList[4].name;
+        document.getElementById("team_name6").innerHTML = sideCharacterList[5].name;
 
-        document.getElementById("team_age4").innerText = "Age: " + sideCharacterList[3].age;
-        document.getElementById("team_age5").innerText = "Age: " + sideCharacterList[4].age;
-        document.getElementById("team_age6").innerText = "Age: " + sideCharacterList[5].age;
+        document.getElementById("team_dept4").innerHTML = "Department: " + sideCharacterList[3].dept;
+        document.getElementById("team_dept5").innerHTML = "Department: " + sideCharacterList[4].dept;
+        document.getElementById("team_dept6").innerHTML = "Department: " + sideCharacterList[5].dept;
+
+        document.getElementById("team_user4").innerHTML = "Username: " + sideCharacterList[3].username;
+        document.getElementById("team_user5").innerHTML = "Username: " + sideCharacterList[4].username;
+        document.getElementById("team_user6").innerHTML = "Username: " + sideCharacterList[5].username;
+
+        document.getElementById("team_pass4").innerHTML = "Password: " + sideCharacterList[3].encrypted_pw;
+        document.getElementById("team_pass5").innerHTML = "Password: " + sideCharacterList[4].encrypted_pw;
+        document.getElementById("team_pass6").innerHTML = "Password: " + sideCharacterList[5].encrypted_pw;
+
+        document.getElementById("team_age4").innerHTML = "Age: " + sideCharacterList[3].age;
+        document.getElementById("team_age5").innerHTML = "Age: " + sideCharacterList[4].age;
+        document.getElementById("team_age6").innerHTML = "Age: " + sideCharacterList[5].age;
 
         document.getElementById("team_bio4").innerHTML = sideCharacterList[3].bio;
         document.getElementById("team_bio5").innerHTML = sideCharacterList[4].bio;
         document.getElementById("team_bio6").innerHTML = sideCharacterList[5].bio;
     </script>
 </body>
+
 </html>

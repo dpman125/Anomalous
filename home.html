@@ -8,6 +8,7 @@
 </head>
 
 <body>
+    <script src="chatTrees.js"></script>
     <script src="GSlogic.js"></script>
     <script src="characterObjects.js"></script>
     <script src="main.js"></script>
@@ -36,7 +37,11 @@
                     </td>
                     </th>
                     <tr>
-                        <td><img id="profile_img" src="img/waltah.jpg" alt="NA"></td>
+                        <td>
+                            <img id="profile_img" src="img/defaultavatar.png" alt="NA">
+                            <button class="user_btn" id="chatBtn"
+                                onclick="openModal('chatModal'), startChat(characterList[characterIndex])"></button>
+                        </td>
                         <td>
                             <h1 id="profile_name">No account Selected</h1>
                             <h2 id="profile_age"></h2>
@@ -65,7 +70,7 @@
 
             </td>
         </tr>
-        <script>updateProfileDisplay();</script>
+        <script>updateProfileDisplay(); chatBtnUpdate();</script>
         <!--terminal-->
         <tr id="bottom_row">
             <td id="terminal" colspan="2">
@@ -89,30 +94,114 @@
     </div>
 
     <!--chat modal-->
-    <div id="chatModal" class="modal" style="display:flex">
-        <div class="modal-content">
+    <div id="chatModal" class="modal">
+        <div class="modal-content" id="chat-content">
             <span class="close" onclick="closeModal('chatModal')">&times;</span>
             <h1>Agora chat</h1>
-            <p class="MCText" id="MC1">hello</p>
-            <p class="bossText" id="boss1">hi</p>
-            <p class="MCText" id="MC2">asdf</p>
-            <p class="bossText" id="boss2">asdf</p>
-            <p class="MCText" id="MC3">sadf</p>
-            <p class="bossText" id="boss3">asdf</p>
-            <p class="MCText" id="MC4"></p>
-            <p class="bossText" id="boss4"></p>
-            <p class="MCText" id="MC5"></p>
-            <p class="bossText" id="boss5"></p>
-            <p class="MCText" id="MC6"></p>
-            <p class="bossText" id="boss6"></p>
-            <p class="MCText" id="MC7"></p>
-            <p class="bossText" id="boss7"></p>
-            <p class="MCText" id="MC8"></p>
-            <p class="bossText" id="boss8"></p>
-            <p class="MCText" id="MC9"></p>
-            <p class="bossText" id="boss9"></p>
-            <p class="MCText" id="MC10"></p>
-            <p class="bossText" id="boss10"></p>
+            <table>
+                <tr>
+                    <td id="contact-details">
+                        <h1 id="bossName">Default boss</h1>
+                        <img id="bossImg" src="img/defaultavatar.png" alt="Boss Image">
+                    </td>
+                    <td id="chat-box">
+                        <p>me:</p>
+                        <div class="textbg">
+                            <p class="MCText" id="MC1">hello</p>
+                        </div>
+                        <p id="bossNameChat"></p>
+                        <div class="textbg">
+                            <p class="bossText" id="boss1">hi</p>
+                        </div>
+                        <p>me:</p>
+                        <div class="textbg">
+                            <p class="MCText" id="MC2">asdf</p>
+                        </div>
+                        <p id="bossNameChat"></p>
+                        <div class="textbg">
+                            <p class="bossText" id="boss2">asdf</p>
+                        </div>
+                        <p>me:</p>
+                        <div class="textbg">
+                            <p class="MCText" id="MC3">sadf</p>
+                        </div>
+                        <p id="bossNameChat"></p>
+                        <div class="textbg">
+                            <p class="bossText" id="boss3">asdf</p>
+                        </div>
+                        <p>me:</p>
+                        <div class="textbg">
+                            <p class="MCText" id="MC4"></p>
+                        </div>
+                        <p id="bossNameChat"></p>
+                        <div class="textbg">
+                            <p class="bossText" id="boss4"></p>
+                        </div>
+                        <p>me:</p>
+                        <div class="textbg">
+                            <p class="MCText" id="MC5"></p>
+                        </div>
+                        <p id="bossNameChat"></p>
+                        <div class="textbg">
+                            <p class="bossText" id="boss5"></p>
+                        </div>
+                        <p>me:</p>
+                        <div class="textbg">
+                            <p class="MCText" id="MC6"></p>
+                        </div>
+                        <p id="bossNameChat"></p>
+                        <div class="textbg">
+                            <p class="bossText" id="boss6"></p>
+                        </div>
+                        <p>me:</p>
+                        <div class="textbg">
+                            <p class="MCText" id="MC7"></p>
+                        </div>
+                        <p id="bossNameChat"></p>
+                        <div class="textbg">
+                            <p class="bossText" id="boss7"></p>
+                        </div>
+                        <p>me:</p>
+                        <div class="textbg">
+                            <p class="MCText" id="MC8"></p>
+                        </div>
+                        <p id="bossNameChat"></p>
+                        <div class="textbg">
+                            <p class="bossText" id="boss8"></p>
+                        </div>
+                        <p>me:</p>
+                        <div class="textbg">
+                            <p class="MCText" id="MC9"></p>
+                        </div>
+                        <p id="bossNameChat"></p>
+                        <div class="textbg">
+                            <p class="bossText" id="boss9"></p>
+                        </div>
+                        <p>me:</p>
+                        <div class="textbg">
+                            <p class="MCText" id="MC10"></p>
+                        </div>
+                        <p id="bossNameChat"></p>
+                        <div class="textbg">
+                            <p class="bossText" id="boss10"></p>
+                        </div>
+                    </td>
+                    <td id="dialogue_options">
+                        <div class="textbg">
+                            <p>Select a dialogue option:</p>
+                            <button class="user_btn" id="dialogueOption1"
+                                onclick="selectDialogueOption(1)"></button><br>
+                            <button class="user_btn" id="dialogueOption2"
+                                onclick="selectDialogueOption(2)"></button><br>
+                            <button class="user_btn" id="dialogueOption3"
+                                onclick="selectDialogueOption(3)"></button><br>
+                            <button class="user_btn" id="dialogueOption4"
+                                onclick="selectDialogueOption(4)"></button><br>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
         </div>
 
     </div>

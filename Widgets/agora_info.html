@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>ACNS Info</title>
@@ -14,6 +15,7 @@
         }
     </style>
 </head>
+
 <body style="background-color:aliceblue">
     <div class="webpagediv">
         <h1 class="dcd_ifo"> C-DC ACNS
@@ -42,11 +44,38 @@
         @ErwinDAmico:  videos of 5 legged dogs? <br>
         @DukeCollins:... I'm going back to work. </p>
         <h2 class="dcd_ifo"> BABEL - The Platform of Platforms </h2>
+<<<<<<< HEAD
         <p class="dcd_ifo"> The statue of Marduk, the patron deity of Babylon. Once a maestro of the universe and is now a part of a dead religion without any followers. I remain. A new creator for a new people. One that speaks to you, open heart and mind. One whose faith is in YOU and serves YOU. BABEL, the next innovation in artificial intelligence. BABEL, the digital guardian. BABEL, the answer.</p>
         <p class="dcd_ifo"> - BABEL is a super-powered AI powered by 19 separate server farms surrounding the Central-Datacenter <br>
         - Cutting edge MRAM p-bit units form the foundation of the machine and drive it’s complex systems and potential <br>
         - Hyper advanced training innovations mean instant pattern recognition / common sense <br>
         - Currently estimated to be the most expensive computer program in history, worth an estimated 12 billion </p>
+=======
+        <p class="dcd_ifo"> 43pgj3gppi3gjpigoijtl</p>
+        <h2 class="dcd_ifo"> BABEL Capabilities </h2>
+        <p class="dcd_ifo"> mjrpigjijgoij4olign4leng</p>
+
+        <table>
+            <tr>
+                <th class="dcd_ifo" colspan="2">
+                    <h1 class="dcd_ifo">Leadership</h1>
+                </th>
+            </tr>
+            <tr>
+                <td><img src="../img/acns/babel.png" alt="BABEL" style="width:200px;"></td>
+                <td class="dcd_ifo">
+                    Greetings and welcome. I'm Lite+, The personal assistant to help guide you through your experience
+                    here at
+                    Agora. While people really like my big brother BABEL, I hold a very important role. Keeping things
+                    balanced.
+                    While we are this close to actualizing infinity, the world wants to pace itself. That's where I come
+                    in! I'm all
+                    about transparency and user safety, the keys to the online of tomorrow.
+                </td>
+            </tr>
+        </table>
+
+>>>>>>> 6c6a23c574e2c9d65e47ff606f8f2e225f610768
         <h2 class="dcd_ifo"> Our Team</h2>
         <table>
             <tr>
@@ -57,6 +86,12 @@
                     <h3 class="dcd_ifo" id="team_name7">
                     </h3>
                     <p class="dcd_ifo" id="team_age7"></p>
+                    <h1 class="dcd_ifo" id="team_name7">
+                    </h1>
+                    <h2 class="dcd_ifo" id="team_dept7"></h2>
+                    <p class="dcd_ifo" id="team_user7" style="font-size:35px"></p>
+                    <p class="dcd_ifo" id="team_pass7" style="font-size:35px"></p>
+                    <p class="dcd_ifo" id="team_age7" style="font-size:35px"></p>
                     <p class="dcd_ifo bio" id="team_bio7"></p>
                 </td>
             </tr>
@@ -68,6 +103,12 @@
                     <h3 class="dcd_ifo" id="team_name8">
                     </h3>
                     <p class="dcd_ifo" id="team_age8"></p>
+                    <h1 class="dcd_ifo" id="team_name8">
+                    </h1>
+                    <h2 class="dcd_ifo" id="team_dept8"></h2>
+                    <p class="dcd_ifo" id="team_user8" style="font-size:35px"></p>
+                    <p class="dcd_ifo" id="team_pass8" style="font-size:35px"></p>
+                    <p class="dcd_ifo" id="team_age8" style="font-size:35px"></p>
                     <p class="dcd_ifo bio" id="team_bio8"></p>
                 </td>
             </tr>
@@ -76,9 +117,12 @@
                     <img id="team_img9">
                 </td>
                 <td>
-                    <h3 class="dcd_ifo" id="team_name9">
-                    </h3>
-                    <p class="dcd_ifo" id="team_age9"></p>
+                    <h1 class="dcd_ifo" id="team_name9">
+                    </h1>
+                    <h2 class="dcd_ifo" id="team_dept9"></h2>
+                    <p class="dcd_ifo" id="team_user9" style="font-size:35px"></p>
+                    <p class="dcd_ifo" id="team_pass9" style="font-size:35px"></p>
+                    <p class="dcd_ifo" id="team_age9" style="font-size:35px"></p>
                     <p class="dcd_ifo bio" id="team_bio9"></p>
                 </td>
             </tr>
@@ -89,17 +133,30 @@
         document.getElementById("team_img8").src = "../" + sideCharacterList[7].img;
         document.getElementById("team_img9").src = "../" + sideCharacterList[8].img;
 
-        document.getElementById("team_name7").innerText = sideCharacterList[6].name;
-        document.getElementById("team_name8").innerText = sideCharacterList[7].name;
-        document.getElementById("team_name9").innerText = sideCharacterList[8].name;
+        document.getElementById("team_name7").innerHTML = sideCharacterList[6].name;
+        document.getElementById("team_name8").innerHTML = sideCharacterList[7].name;
+        document.getElementById("team_name9").innerHTML = sideCharacterList[8].name;
 
-        document.getElementById("team_age7").innerText = "Age: " + sideCharacterList[6].age;
-        document.getElementById("team_age8").innerText = "Age: " + sideCharacterList[7].age;
-        document.getElementById("team_age9").innerText = "Age: " + sideCharacterList[8].age;
+        document.getElementById("team_dept7").innerHTML = "Department: " + sideCharacterList[6].dept;
+        document.getElementById("team_dept8").innerHTML = "Department: " + sideCharacterList[7].dept;
+        document.getElementById("team_dept9").innerHTML = "Department: " + sideCharacterList[8].dept;
+
+        document.getElementById("team_user7").innerHTML = "Username: " + sideCharacterList[6].username;
+        document.getElementById("team_user8").innerHTML = "Username: " + sideCharacterList[7].username;
+        document.getElementById("team_user9").innerHTML = "Username: " + sideCharacterList[8].username;
+
+        document.getElementById("team_pass7").innerHTML = "Password: " + sideCharacterList[6].encrypted_pw;
+        document.getElementById("team_pass8").innerHTML = "Password: " + sideCharacterList[7].encrypted_pw;
+        document.getElementById("team_pass9").innerHTML = "Password: " + sideCharacterList[8].encrypted_pw;
+
+        document.getElementById("team_age7").innerHTML = "Age: " + sideCharacterList[6].age;
+        document.getElementById("team_age8").innerHTML = "Age: " + sideCharacterList[7].age;
+        document.getElementById("team_age9").innerHTML = "Age: " + sideCharacterList[8].age;
 
         document.getElementById("team_bio7").innerHTML = sideCharacterList[6].bio;
         document.getElementById("team_bio8").innerHTML = sideCharacterList[7].bio;
         document.getElementById("team_bio9").innerHTML = sideCharacterList[8].bio;
     </script>
 </body>
+
 </html>
