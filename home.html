@@ -8,6 +8,8 @@
 </head>
 
 <body>
+    <script src="characterObjects.js"></script>
+    <script src="main.js"></script>
     <table id="main_page">
         <tr id="top_row">
             <td id="user_db">
@@ -25,6 +27,7 @@
                 <button class="user_btn">person 8</button>
                 <button class="user_btn">person 9</button>
             </td>
+            <!--agora-->
             <td id="agora">
                 <table id="main_page">
                     <th>
@@ -33,38 +36,60 @@
                     </td>
                     </th>
                     <tr>
-                        <td><img src="img/Jacob-G-Agora-Profile.png" alt="person"></td>
+                        <td><img id="profile_img" src="img/waltah.jpg" alt="NA"></td>
                         <td>
-                            <h1>Paul Taylor</h1>
-                            <h2>Age 36</h2>
-                            <p class="bio"><br><strong>Likes:</strong> horror, comics, metal music and dogs.
-                                <br><strong>Dislikes:</strong> "basic" or "normie" interests, smoking, and drinking.
-                                <br><strong>Bio:</strong> Paul is a collector of horror comics and vintage metal vinyls
-                                and
-                                cds of his favorite
-                                bands. He owns two husky dogs named Ace and Luna. He used to work at a small comic store
-                                then he decided to move up in the world. His personality is chill but also annoyingly
-                                about
-                                how he talks about his interests.
-                            </p>
+                            <h1 id="profile_name">No account Selected</h1>
+                            <h2 id="profile_age"></h2>
+                            <p id="profile_bio" class="bio">Please select an account or sign in</p>
 
                         </td>
+                    </tr>
                 </table>
-                </h1>
+                <table style="width:100%" style="margin:10px; display:block">
+                    <tr>
+                        <td>
+                            <button class="user_btn" onclick="previousProfile()" id="backBtn">Prev. Profile</button>
+                        </td>
+                        <td style="text-align: center;">
+                            <button class="user_btn" id="newProfileBtn" onclick="openModal('profileModal')">Add
+                                Profile</button>
 
+                        </td>
+                        <td style="text-align: right;">
+                            <button class="user_btn" id="nextBtn" onclick="nextProfile()">Next Profile</button>
+                        </td>
+                    </tr>
+                </table>
                 <br>
+
 
             </td>
         </tr>
+        <script>updateProfileDisplay();</script>
+        <!--terminal-->
         <tr id="bottom_row">
             <td id="terminal" colspan="2">
-                <p>terminal here</p>
+                <iframe id="GS_iframe" src="GS.html"></iframe>
             </td>
         </tr>
     </table>
-    <div>
+    <!--modal-->
+    <td>
+        <div id="profileModal" class="modal" style="display:none">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('profileModal')">&times;</span>
+                <h2>Add New Profile</h2>
+                <form id="profileForm" onsubmit="handleSubmit(event)">
+                    <label class="newprofiletxt" for="username">Username:</label>
+                    <input type="text" id="username" name="username" required><br>
+                    <label class="newprofiletxt" for="password">Password:</label>
+                    <input type="password" id="password" name="password" required><br>
+                    <input class="user_btn" type="submit" value="Sign in">
+                </form>
+            </div>
+        </div>
+    </td>
 
-    </div>
 
 </body>
 

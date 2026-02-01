@@ -15,6 +15,7 @@ img {
     margin: 10px;
     border: 2px solid #33ff33;
     padding: 1px;
+    max-width: 300px;
 }
 
 body {
@@ -193,4 +194,82 @@ textarea:focus {
     cursor: pointer;
     text-transform: uppercase;
     margin: 5px;
+    width: 200px;
 }
+
+.modal {
+    display: flex;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.modal-content {
+    padding: 10px;
+    border: 4px solid #33ff33;
+}
+
+#profileModal {
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
+
+.close {
+    color: #33ff33;
+    float: right;
+    vertical-align: top;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    text-shadow: 0 0 10px #33ff33;
+}
+
+#username,
+#password {
+    background-color: #0a0a0a;
+    border: 2px solid #33ff33;
+    color: #33ff33;
+    padding: 10px;
+    font-size: 18px;
+    width: 80%;
+    margin-bottom: 15px;
+}
+
+#GS_iframe {
+    width: 100%;
+    height: 300px;
+    border: none;
+    background-color: #0a0a0a;
+    background: #0a0a0a;
+}
+
+.GSText {
+    color: #59a6ff;
+    font-size: 25px;
+    line-height: 1.5;
+    /* white-space: pre-wrap; */
+    font-family: monospace;
+    text-align: left;
+    width: 70%;
+}
+
+.MCText {
+    color: #ffffff;
+    font-size: 25px;
+    line-height: 1.5;
+    /* white-space: pre-wrap; */
+    font-family: monospace;
+    text-align: right;
+    width: 70%;
+    margin-left: auto;
+}
+
+.textbg {}
