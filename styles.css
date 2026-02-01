@@ -293,3 +293,12 @@ textarea:focus {
     border: none;
     background-color: #0a0a0a;
 }
+
+.dcd_ifo {
+    color: #000000;
+    font-family: 'VT323', 'Courier New', Courier, monospace;
+}
+
+p.dcd_ifo {
+    font-size: 20px;
+}

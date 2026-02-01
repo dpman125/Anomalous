@@ -2,17 +2,82 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>IT Info</title>
+    <title>ACNS Info</title>
     <link rel="stylesheet" href="../styles.css">
+    <script src="../characterObjects.js"></script>
+    <style>
+        body::before,
+        body::after {
+            display: none !important;
+            content: none !important;
+            background: none !important;
+        }
+    </style>
 </head>
-<body>
-<h1> Agora Central System
-</h1>
-<h2> Agora Data </h2>
-<p> mpi4j3goijpofkoip3jgpok24pign3iopgk </p>
-<h2> BABEL - The Platform of Platforms </h2>
-<p> 43pgj3gppi3gjpigoijtl</p>
-<h2> BABEL Capabilities </h2>
-<p> mjrpigjijgoij4olign4leng</p>
+<body style="background-color:aliceblue">
+    <div class="webpagediv">
+        <h1 class="dcd_ifo"> C-DC ACNS
+        </h1>
+        <h2 class="dcd_ifo"> Agora Data </h2>
+        <p class="dcd_ifo"> mpi4j3goijpofkoip3jgpok24pign3iopgk </p>
+        <h2 class="dcd_ifo"> BABEL - The Platform of Platforms </h2>
+        <p class="dcd_ifo"> 43pgj3gppi3gjpigoijtl</p>
+        <h2 class="dcd_ifo"> BABEL Capabilities </h2>
+        <p class="dcd_ifo"> mjrpigjijgoij4olign4leng</p>
+        
+        <h2 class="dcd_ifo"> Our Team</h2>
+        <table>
+            <tr>
+                <td>
+                    <img id="team_img7">
+                </td>
+                <td>
+                    <h3 class="dcd_ifo" id="team_name7">
+                    </h3>
+                    <p class="dcd_ifo" id="team_age7"></p>
+                    <p class="dcd_ifo bio" id="team_bio7"></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img id="team_img8">
+                </td>
+                <td>
+                    <h3 class="dcd_ifo" id="team_name8">
+                    </h3>
+                    <p class="dcd_ifo" id="team_age8"></p>
+                    <p class="dcd_ifo bio" id="team_bio8"></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img id="team_img9">
+                </td>
+                <td>
+                    <h3 class="dcd_ifo" id="team_name9">
+                    </h3>
+                    <p class="dcd_ifo" id="team_age9"></p>
+                    <p class="dcd_ifo bio" id="team_bio9"></p>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        document.getElementById("team_img7").src = "../" + sideCharacterList[6].img;
+        document.getElementById("team_img8").src = "../" + sideCharacterList[7].img;
+        document.getElementById("team_img9").src = "../" + sideCharacterList[8].img;
+
+        document.getElementById("team_name7").innerText = sideCharacterList[6].name;
+        document.getElementById("team_name8").innerText = sideCharacterList[7].name;
+        document.getElementById("team_name9").innerText = sideCharacterList[8].name;
+
+        document.getElementById("team_age7").innerText = "Age: " + sideCharacterList[6].age;
+        document.getElementById("team_age8").innerText = "Age: " + sideCharacterList[7].age;
+        document.getElementById("team_age9").innerText = "Age: " + sideCharacterList[8].age;
+
+        document.getElementById("team_bio7").innerHTML = sideCharacterList[6].bio;
+        document.getElementById("team_bio8").innerHTML = sideCharacterList[7].bio;
+        document.getElementById("team_bio9").innerHTML = sideCharacterList[8].bio;
+    </script>
 </body>
 </html>

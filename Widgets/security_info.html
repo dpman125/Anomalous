@@ -2,17 +2,82 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>IT Info</title>
+    <title>Security Info</title>
     <link rel="stylesheet" href="../styles.css">
+    <script src="../characterObjects.js"></script>
+    <style>
+        body::before,
+        body::after {
+            display: none !important;
+            content: none !important;
+            background: none !important;
+        }
+    </style>
 </head>
-<body>
-<h1> Security
-</h1>
-<h2> Security Statistics</h2>
-<p> mpi4j3goijpofkoip3jgpok24pign3iopgk </p>
-<h2> Protocol </h2>
-<p> k3mgl3kglknljrngij3pg</p>
-<h2> Protection Scope </h2>
-<p> wmfjwrigjeirjgpojergp</p>
+<body style="background-color:aliceblue">
+    <div class="webpagediv">
+        <h1 class="dcd_ifo"> C-DC Security
+        </h1>
+        <h2 class="dcd_ifo"> Security Statistics</h2>
+        <p class="dcd_ifo"> mpi4j3goijpofkoip3jgpok24pign3iopgk </p>
+        <h2 class="dcd_ifo"> Protocol </h2>
+        <p class="dcd_ifo"> k3mgl3kglknljrngij3pg</p>
+        <h2 class="dcd_ifo"> Protection Scope </h2>
+        <p class="dcd_ifo"> wmfjwrigjeirjgpojergp</p>
+        
+        <h2 class="dcd_ifo"> Our Team</h2>
+        <table>
+            <tr>
+                <td>
+                    <img id="team_img10">
+                </td>
+                <td>
+                    <h3 class="dcd_ifo" id="team_name10">
+                    </h3>
+                    <p class="dcd_ifo" id="team_age10"></p>
+                    <p class="dcd_ifo bio" id="team_bio10"></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img id="team_img11">
+                </td>
+                <td>
+                    <h3 class="dcd_ifo" id="team_name11">
+                    </h3>
+                    <p class="dcd_ifo" id="team_age11"></p>
+                    <p class="dcd_ifo bio" id="team_bio11"></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img id="team_img12">
+                </td>
+                <td>
+                    <h3 class="dcd_ifo" id="team_name12">
+                    </h3>
+                    <p class="dcd_ifo" id="team_age12"></p>
+                    <p class="dcd_ifo bio" id="team_bio12"></p>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        document.getElementById("team_img10").src = "../" + sideCharacterList[9].img;
+        document.getElementById("team_img11").src = "../" + sideCharacterList[10].img;
+        document.getElementById("team_img12").src = "../" + sideCharacterList[11].img;
+
+        document.getElementById("team_name10").innerText = sideCharacterList[9].name;
+        document.getElementById("team_name11").innerText = sideCharacterList[10].name;
+        document.getElementById("team_name12").innerText = sideCharacterList[11].name;
+
+        document.getElementById("team_age10").innerText = "Age: " + sideCharacterList[9].age;
+        document.getElementById("team_age11").innerText = "Age: " + sideCharacterList[10].age;
+        document.getElementById("team_age12").innerText = "Age: " + sideCharacterList[11].age;
+
+        document.getElementById("team_bio10").innerHTML = sideCharacterList[9].bio;
+        document.getElementById("team_bio11").innerHTML = sideCharacterList[10].bio;
+        document.getElementById("team_bio12").innerHTML = sideCharacterList[11].bio;
+    </script>
 </body>
 </html>

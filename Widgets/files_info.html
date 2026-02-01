@@ -2,19 +2,84 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>IT Info</title>
+    <title>Files Info</title>
     <link rel="stylesheet" href="../styles.css">
+    <script src="../characterObjects.js"></script>
+    <style>
+        body::before,
+        body::after {
+            display: none !important;
+            content: none !important;
+            background: none !important;
+        }
+    </style>
 </head>
-<body>
-<h1> Public Files
-</h1>
-<h2> If Human, PLEASE READ!</h2>
-<p> mpi4j3goijpofkoip3jgpok24pign3iopgk </p>
-<h2> A Frustrated Programmer's Comments</h2>
-<p> igjiergoirjgoirjoi </p>
-<h2> Logged Reports </h2>
-<p> njgjgoij5oigj54oigj5 </p>
-<h2> Hal and the Employee Programmer</h2>
-<p> f4jngij4pigjp34 </p>
+<body style="background-color:aliceblue">
+    <div class="webpagediv">
+        <h1 class="dcd_ifo"> C-DC Files
+        </h1>
+        <h2 class="dcd_ifo"> If Human, PLEASE READ!</h2>
+        <p class="dcd_ifo"> mpi4j3goijpofkoip3jgpok24pign3iopgk </p>
+        <h2 class="dcd_ifo"> A Frustrated Programmer's Comments</h2>
+        <p class="dcd_ifo"> igjiergoirjgoirjoi </p>
+        <h2 class="dcd_ifo"> Logged Reports </h2>
+        <p class="dcd_ifo"> njgjgoij5oigj54oigj5 </p>
+        <h2 class="dcd_ifo"> Hal and the Employee Programmer</h2>
+        <p class="dcd_ifo"> f4jngij4pigjp34 </p>
+        
+        <h2 class="dcd_ifo"> Our Team</h2>
+        <table>
+            <tr>
+                <td>
+                    <img id="team_img4">
+                </td>
+                <td>
+                    <h3 class="dcd_ifo" id="team_name4">
+                    </h3>
+                    <p class="dcd_ifo" id="team_age4"></p>
+                    <p class="dcd_ifo bio" id="team_bio4"></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img id="team_img5">
+                </td>
+                <td>
+                    <h3 class="dcd_ifo" id="team_name5">
+                    </h3>
+                    <p class="dcd_ifo" id="team_age5"></p>
+                    <p class="dcd_ifo bio" id="team_bio5"></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <img id="team_img6">
+                </td>
+                <td>
+                    <h3 class="dcd_ifo" id="team_name6">
+                    </h3>
+                    <p class="dcd_ifo" id="team_age6"></p>
+                    <p class="dcd_ifo bio" id="team_bio6"></p>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        document.getElementById("team_img4").src = "../" + sideCharacterList[3].img;
+        document.getElementById("team_img5").src = "../" + sideCharacterList[4].img;
+        document.getElementById("team_img6").src = "../" + sideCharacterList[5].img;
+
+        document.getElementById("team_name4").innerText = sideCharacterList[3].name;
+        document.getElementById("team_name5").innerText = sideCharacterList[4].name;
+        document.getElementById("team_name6").innerText = sideCharacterList[5].name;
+
+        document.getElementById("team_age4").innerText = "Age: " + sideCharacterList[3].age;
+        document.getElementById("team_age5").innerText = "Age: " + sideCharacterList[4].age;
+        document.getElementById("team_age6").innerText = "Age: " + sideCharacterList[5].age;
+
+        document.getElementById("team_bio4").innerHTML = sideCharacterList[3].bio;
+        document.getElementById("team_bio5").innerHTML = sideCharacterList[4].bio;
+        document.getElementById("team_bio6").innerHTML = sideCharacterList[5].bio;
+    </script>
 </body>
 </html>
