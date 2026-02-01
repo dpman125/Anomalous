@@ -318,13 +318,31 @@ const filesDialogueTree = {
 
 const acnsDialogueTree = {
     "intro": {
-        bossText: "Greetings. State your purpose.",
+        bossText: "Hello there, may I ask who is under that mask?",
         playerText: null,
         options: [
-            { text: "Placeholder option 1", nextState: "intro" },
-            { text: "Placeholder option 2", nextState: "intro" }
+            { text: "The Masked Crusader, get bent.", nextState: "immature_end" },
+            { text: "Excuse me?", nextState: "confrontational" },
+            { text: "what mask", nextState: "denial" }
         ]
-    }
+    },
+    "immature_end": {
+        bossText: "BLOCKED",
+        playerText: "The Masked Crusader, get bent.",
+        options: [],
+        onEnter: function () {
+            setTimeout(function () { closeModal('chatModal'); }, 8000);
+        }
+    },
+    "confrontational": {
+        bossText: "There is no excuse for it. Liars are the bane of knowledge.",
+        playerText: "Excuse me?",
+        options: [{ text: "you call me a liar? Does that make you a hypocrite?", nextState: "accusation" }, { text: "what does that make you?", nextState: "questioning_end" }, { text: "I'm sorry, you must be mistaken.", nextState: "polite_end" }]
+    },
+    "questioning_end": {},
+    "denial": {
+
+    },
 };
 
 const securityDialogueTree = {
