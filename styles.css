@@ -221,6 +221,8 @@ textarea:focus {
     height: 100%;
 }
 
+#chat {}
+
 
 .close {
     color: #35A6A6;
