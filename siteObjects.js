@@ -20,11 +20,19 @@ const security = new Object({
 
 const finance = new Object({
     name: "Finance",
-    url: "widgets/it_info.html"
+    url: "widgets/finance_info.html"
 });
 
-const RandD
-    = new Object({
-        name: "R&D",
-        url: "widgets/reaserchdev_info.html"
-    });
+const RandD = new Object({
+    name: "R&D",
+    url: "widgets/researchdev_info.html"
+});
+
+const siteList = [
+    IT,
+    files,
+    agora,
+    security,
+    finance,
+    RandD,
+];

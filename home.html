@@ -8,24 +8,24 @@
 </head>
 
 <body>
+    <script src="GSlogic.js"></script>
     <script src="characterObjects.js"></script>
     <script src="main.js"></script>
+    <script src="siteObjects.js"></script>
     <table id="main_page">
         <tr id="top_row">
-            <td id="user_db">
-                <h1>IT</h1>
-                <!-- will be a widget of a website-->
-                <button class="user_btn">person 1</button>
-                <button class="user_btn">person 2</button>
-                <button class="user_btn">person 3</button>
-                <br>
-                <button class="user_btn">person 4</button>
-                <button class="user_btn">person 5</button>
-                <button class="user_btn">person 6</button>
-                <br>
-                <button class="user_btn">person 7</button>
-                <button class="user_btn">person 8</button>
-                <button class="user_btn">person 9</button>
+            <td id="user_db" style="width:50%">
+                <iframe id="current_site"></iframe>
+                <table style="width:100%" style="margin:10px; display:block">
+                    <tr>
+                        <td>
+                            <button class="user_btn" onclick="previousSite()" id="backBtn">Prev. Site</button>
+                        </td>
+                        <td style="text-align: right;">
+                            <button class="user_btn" id="nextBtn" onclick="nextSite()">Next Site</button>
+                        </td>
+                    </tr>
+                </table>
             </td>
             <!--agora-->
             <td id="agora">
@@ -51,8 +51,8 @@
                             <button class="user_btn" onclick="previousProfile()" id="backBtn">Prev. Profile</button>
                         </td>
                         <td style="text-align: center;">
-                            <button class="user_btn" id="newProfileBtn" onclick="openModal('profileModal')">Add
-                                Profile</button>
+                            <button class="user_btn" id="newProfileBtn" onclick="openModal('profileModal')">User
+                                Login</button>
 
                         </td>
                         <td style="text-align: right;">
@@ -74,21 +74,49 @@
         </tr>
     </table>
     <!--modal-->
-    <td>
-        <div id="profileModal" class="modal" style="display:none">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('profileModal')">&times;</span>
-                <h2>Add New Profile</h2>
-                <form id="profileForm" onsubmit="handleSubmit(event)">
-                    <label class="newprofiletxt" for="username">Username:</label>
-                    <input type="text" id="username" name="username" required><br>
-                    <label class="newprofiletxt" for="password">Password:</label>
-                    <input type="password" id="password" name="password" required><br>
-                    <input class="user_btn" type="submit" value="Sign in">
-                </form>
-            </div>
+    <div id="profileModal" class="modal" style="display:none">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('profileModal')">&times;</span>
+            <h2>User Login:</h2>
+            <form id="profileForm" onsubmit="handleSubmit(event)">
+                <label class="newprofiletxt" for="username">Username:</label>
+                <input type="text" id="username" name="username" required><br>
+                <label class="newprofiletxt" for="password">Password:</label>
+                <input type="password" id="password" name="password" required><br>
+                <input class="user_btn" type="submit" value="Sign in">
+            </form>
         </div>
-    </td>
+    </div>
+
+    <!--chat modal-->
+    <div id="chatModal" class="modal" style="display:flex">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('chatModal')">&times;</span>
+            <h1>Agora chat</h1>
+            <p class="MCText" id="MC1">hello</p>
+            <p class="bossText" id="boss1">hi</p>
+            <p class="MCText" id="MC2">asdf</p>
+            <p class="bossText" id="boss2">asdf</p>
+            <p class="MCText" id="MC3">sadf</p>
+            <p class="bossText" id="boss3">asdf</p>
+            <p class="MCText" id="MC4"></p>
+            <p class="bossText" id="boss4"></p>
+            <p class="MCText" id="MC5"></p>
+            <p class="bossText" id="boss5"></p>
+            <p class="MCText" id="MC6"></p>
+            <p class="bossText" id="boss6"></p>
+            <p class="MCText" id="MC7"></p>
+            <p class="bossText" id="boss7"></p>
+            <p class="MCText" id="MC8"></p>
+            <p class="bossText" id="boss8"></p>
+            <p class="MCText" id="MC9"></p>
+            <p class="bossText" id="boss9"></p>
+            <p class="MCText" id="MC10"></p>
+            <p class="bossText" id="boss10"></p>
+        </div>
+
+    </div>
+
 
 
 </body>
