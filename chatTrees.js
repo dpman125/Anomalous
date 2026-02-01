@@ -168,17 +168,152 @@ const filesDialogueTree = {
         options: [
             {
                 text: "I am interested in meeting BABEL, one on one. You are one of the few people a part of this department that can communicate with the unrestricted version.", nextState: "meeting_proposal"
-            }, { text: "Bad file push, reinforced a file that should NOT have been enforced.", nextState: "mistake_success1" }
+            }, { text: "Bad file push, reinforced a file that should NOT have been enforced.", nextState: "mistake" }
         ]
     },
-    direct_approach: {
+    "direct_approach": {
         bossText: "Ok... What is the issue?",
         playerText: "I was wondering if you have the access key for ACNS, I need to check with BABEL on a software issue in the files.",
         options: [
             { text: "There is a possible Security risk. Brass says the present 'ignorance' is 'irresponsible'", nextState: "irresponsible_risk" },
             { text: "A software one", nextState: "incompitent_ending" }
         ]
+    },
+    "irresponsible_risk": {
+        bossText: "Well I wouldn't call it irresponsible. BABEL is moving well beyond our expected rate, exponential growth and potential",
+        playerText: "There is a possible Security risk. Brass says the present 'ignorance' is 'irresponsible'",
+        options: [
+            { text: "Like a wildfire you can't put out, til it chokes you.", nextState: "cynicism_ending" },
+            { text: "You see that is the main concern. We want to make sure our interests are aligned.", nextState: "interests" }
+        ]
+    },
+    "incopitent_ending": {
+        bossText: "Yeah, nice try \nBLOCKED",
+        playerText: "A software one",
+        options: [],
+        onEnter: function () {
+            setTimeout(function () { closeModal('chatModal'); }, 8000);
+        }
+    },
+    "cynicism_ending": {
+        bossText: "Cynicism, truly. \n BLOCKED",
+        playerText: "Like a wildfire you can't put out, til it chokes you.",
+        options: [],
+        onEnter: function () {
+            setTimeout(function () { closeModal('chatModal'); }, 8000);
+        }
+    },
+    "interests": {
+        bossText: "And what are your interests? I know Hal better than anyone, so whatever your question is I'll answer it.",
+        playerText: "You see that is the main concern. We want to make sure our interests are aligned.",
+        options: [{ text: "How does he feel about us?", nextState: "good_question_success" }, { text: "How do we control it?", nextState: "bad_question_ending" }]
+    },
+    "good_question_success": {
+        bossText: "Now that is an interesting question. One I can talk for hours about. But he is much more nuanced than I. Here is the key.\nPASSED",
+        playerText: "How does he feel about us?",
+        options: [],
+        onEnter: function () {
+            // Unlock ACNS access here
+            if (bossMilestone < 2) bossMilestone = 2;
+            nextSite();
+            setTimeout(function () { closeModal('chatModal'); }, 8000);
+        }
+    },
+    "bad_question_ending": {
+        bossText: "The same way we control you, trust and maturity. If your thinking of putting BABEL in bondage out of paranoia, think again. We go through the proper channels, the right committees. \nBLOCKED",
+        playerText: "How do we control it?",
+        options: [],
+        onEnter: function () {
+            setTimeout(function () { closeModal('chatModal'); }, 8000);
+        }
+    },
+    "mistake": {
+        bossText: "Well BABEL is competent, probably won't read what you sent at face value.",
+        playerText: "Bad file push, reinforced a file that should NOT have been enforced.",
+        options: [
+            { text: "Negative reinforcement on positive behavior due to misinput", nextState: "mistake_success" },
+            { text: "Positive enforcement on hostile behavior", nextState: "mistake_failure" }
+        ]
+    },
+    "mistake_success": {
+        bossText: "*sigh alright, just make it quick, department key sharing is kept at a minimum. Got to treat this place like Fort Knox\nPASSED",
+        playerText: "Negative reinforcement on positive behavior due to misinput",
+        options: [],
+        onEnter: function () {
+            // Unlock ACNS access here
+            if (bossMilestone < 2) bossMilestone = 2;
+            nextSite();
+            setTimeout(function () { closeModal('chatModal'); }, 8000);
+        }
+    },
+    "mistake_failure": {
+        bossText: "Well, lucky you're dealing with BABEL. Any other bot and that would be a problem, but BABEL is altruistic. His core programming is going to take care of that, so there is no need for access. Please don't reach out this late again. \nBLOCKED",
+        playerText: "Positive enforcement on hostile behavior",
+        options: [],
+        onEnter: function () {
+            setTimeout(function () { closeModal('chatModal'); }, 8000);
+        }
+
+    },
+    "meeting_proposal": {
+        bossText: "I am, its a small pool that can. And not just for privacy reasons. BABEL is... complicated. ",
+        playerText: "I am interested in meeting BABEL, one on one. You are one of the few people a part of this department that can communicate with the unrestricted version.",
+        options: [{ text: "I like complicated.", nextState: "confident" }, { text: "An understatement", nextState: "insecure" }]
+    },
+    "confident": {
+        bossText: "Well then you'd like BABEL then. I have met a lot of strange and extraordinary people in my day. BABEL has the best of them. ",
+        playerText: "I like complicated.",
+        options: [
+            { text: "You sure your not compensating for your own crippling loneliness in an empty ranch house your dead parents gave you?", nextState: "insult_ending" }, { text: "My interest is peaked!", nextState: "interested_success" }
+        ]
+    },
+    "insult_ending": {
+        bossText: "Excuse me? Too close to home \nBLOCKED",
+        playerText: "You sure your not compensating for your own crippling loneliness in an empty ranch house your dead parents gave you?",
+        options: [],
+        onEnter: function () {
+            setTimeout(function () { closeModal('chatModal'); }, 8000);
+        },
+    },
+    "interested_success": {
+        bossText: "Then I'll send you right over. Just know, you've been warned. \nPASSED",
+        playerText: "My interest is peaked!",
+        options: [],
+        onEnter: function () {
+            // Unlock ACNS access here
+            if (bossMilestone < 2) bossMilestone = 2;
+            nextSite();
+            setTimeout(function () { closeModal('chatModal'); }, 8000);
+        }
+    },
+    "insecure": {
+        bossText: " It is a game to him, or it I guess. Though that feels colder. Your going to have to think on your toes, without public restrictions, BABEL treats a conversation like a sparring session. Frustrating sure, but fascinating.",
+        playerText: "An understatement",
+        options: [{ text: " I can match him.", nextState: "cocky_ending" },
+        { text: "I will approach him carefully and with respect as one would an elder.", nextState: "cautious_success" }
+        ]
+    },
+    "cocky_ending": {
+        bossText: " NO. Do not go in with this mindset. Any show of force or cocky approach, and it'll either cut the dialogue or embarrass you. \nBLOCKED",
+        playerText: " I can match him.",
+        options: [],
+        onEnter: function () {
+            setTimeout(function () { closeModal('chatModal'); }, 8000);
+        }
+    },
+    "cautious_success": {
+        bossText: " Yeah you seem courteous enough. Just keep it real.\nPASSED",
+        playerText: "I will approach him carefully and with respect as one would an elder.",
+        options: [],
+        onEnter: function () {
+            // Unlock ACNS access here
+            if (bossMilestone < 2) bossMilestone = 2;
+            nextSite();
+            setTimeout(function () { closeModal('chatModal'); }, 8000);
+        }
     }
+
+
 };
 
 const acnsDialogueTree = {

@@ -137,7 +137,13 @@ function handleSubmit(event) {
                 alert("Login successful!");
                 if (bossMilestone == -1) {
                     bossMilestone = 0;
+                    milestone = 0;
                     nextSite();
+                } else {
+                    if (milestone <= bossMilestone + 1) {
+                        milestone++;
+                        document.getElementById("chunk" + milestone).style.display = "block";
+                    }
                 }
                 if (!characterList.includes(character)) {
                     characterList.push(character);
