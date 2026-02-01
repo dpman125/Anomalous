@@ -138,8 +138,8 @@ function handleSubmit(event) {
                 if (bossMilestone == -1) {
                     bossMilestone = 0;
                     milestone = 0;
-                    document.getElementById("GS_iframe").contentWindow.showChunk(milestone + 1);
                     nextSite();
+                    document.getElementById("GS_iframe").contentWindow.showChunk(milestone + 1);
                 } else {
                     if (milestone <= bossMilestone + 1) {
                         milestone++;

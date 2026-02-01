@@ -337,8 +337,9 @@ const acnsDialogueTree = {
     "confrontational": {
         bossText: "There is no excuse for it. Liars are the bane of knowledge.",
         playerText: "Excuse me?",
-        options: []
+        options: [{ text: "you call me a liar? Does that make you a hypocrite?", nextState: "accusation" }, { text: "what does that make you?", nextState: "questioning_end" }, { text: "I'm sorry, you must be mistaken.", nextState: "polite_end" }]
     },
+    "questioning_end": {},
     "denial": {
 
     },
