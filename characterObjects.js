@@ -185,12 +185,12 @@ const IbrahimHashmi = new Object({
     dept: "Security",
 });
 
-const LeroyJenkins = new Object({
-    name: "Leroy Jenkins",
+const LeroyJensen = new Object({
+    name: "Leroy Jensen",
     age: 80,
     bio: "<strong>Likes:</strong> world of warcraft, Fantasy, Dungeons and Dragons, his friends.<br><strong>Dislikes:</strong> waiting for something he could do himself, his friends being fired and replaced by artificial intelligence, his job<br><strong>Bio:</strong>  leroy was enamored by dungeons and dragons at a young age, and loved everything fantasy related, then he found world of warcraft and joined his friends guild but he needed to make money so he got a job at the local data center. (Could also entirely be a bot the company unknowingly hired, hard to tell).",
     img: "img/leroy.png",
-    username: "ljenkins12",
+    username: "ljensen12",
     password: "password",
     encrypted_pw: "********",
     hint: "my password is very secure",
@@ -299,7 +299,7 @@ const sideCharacterList = [
     MattDavis,
     MasonClay,
     Tonyward,
-    LeroyJenkins,
+    LeroyJensen,
 ]
 
 characterList = [];

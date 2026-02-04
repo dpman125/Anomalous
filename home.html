@@ -8,6 +8,11 @@
 </head>
 
 <body>
+    <!-- Background Music -->
+    <audio id="bgMusic" loop>
+        <source src="agora2.mp3" type="audio/mpeg">
+    </audio>
+
     <script src="chatTrees.js"></script>
     <script src="GSlogic.js"></script>
     <script src="characterObjects.js"></script>
@@ -31,9 +36,12 @@
             <!--agora-->
             <td id="agora">
                 <table id="main_page">
+
+
                     <th>
                     <td colspan="2">
-                        <h1>AGORA</h1>
+                        <h1>AGORA<button class="user_btn" style="size:50%"
+                                onclick="openModal('creditsModal')">Credits</button></h1>
                     </td>
                     </th>
                     <tr>
@@ -208,6 +216,25 @@
 
         </div>
 
+    </div>
+
+    <div id="creditsModal" class="modal" style="display:none">
+
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('creditsModal')">&times;</span>
+            <h2>
+                <h1>GGJ 2026 annual game jam</h1><br>
+                Theme: Masks<br><br>
+                <h1>Credits:</h1><br>
+                Writers: Gabriel T Marcum, Rylan Mease, Chris Hammack<br>
+                Programmers: Dylan Panazzi, Alex Kincaid<br>
+                Languages used: HTML/CSS/JavaScript<br>
+                Music: Chris Hammack<br>
+                <br><br>
+                Thank you for playing!
+
+            </h2>
+        </div>
     </div>
 
 

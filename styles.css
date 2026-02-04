@@ -345,3 +345,12 @@ p.dcd_ifo {
     width: 70%;
     padding-left: 10px;
 }
+
+#creditsModal {
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}

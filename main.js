@@ -2,6 +2,15 @@
 characterIndex = -1;
 siteIndex = -1;
 
+// Background music - start on first user interaction (browsers require this)
+document.addEventListener('click', function startMusic() {
+    const music = document.getElementById('bgMusic');
+    if (music && music.paused) {
+        music.volume = 0.3; // Adjust volume (0.0 to 1.0)
+        music.play();
+    }
+}, { once: true });
+
 // game start
 document.addEventListener('keydown', function (event) {
     // Code to execute when a key is pressed down
@@ -14,7 +23,7 @@ document.addEventListener('keydown', function (event) {
 
 function chatBtnUpdate() {
     const character = characterList[characterIndex];
-    if (bossMilestone !== -1 && character && character !== LeroyJenkins) {
+    if (bossMilestone !== -1 && character && character !== LeroyJensen) {
         console.log(characterIndex);
         console.log(character);
         document.getElementById("chatBtn").style.display = "flex";
