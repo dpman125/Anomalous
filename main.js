@@ -1,6 +1,8 @@
 // variables
 characterIndex = -1;
 siteIndex = -1;
+milestone = -1;
+bossMilestone = -1;
 
 // Background music - start on first user interaction (browsers require this)
 document.addEventListener('click', function startMusic() {
